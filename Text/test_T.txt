@@ -1,1 +1,18 @@
-t est
+test
+0
+text
+Ich habe richtig scg
+textl
+Ich habe richtig bogobomb und nächste Zeile
+rep
+
+wait
+100
+stroke
+a
+hold
+b
+rel
+a
+relall
+

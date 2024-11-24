@@ -1,0 +1,6 @@
+// Crackname: test
+void 0() { 
+    keyboard.print("Ich habe richtig scg")
+    keyboard.println("Ich habe richtig bogobomb und nächste Zeile")
+    while(1) {
+        delay(100)
