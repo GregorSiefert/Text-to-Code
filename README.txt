@@ -3,11 +3,12 @@ Dieses Programm dient dazu eine Tastaturabfolge (Text-Datei) in einen ausführba
 
 Aufbau einer Text Datei:
 1 [Name des Cracks]
-2 [Codierung des Cracks]
-3 [Art des Befehls]
-4 [Inhalt für den Befehl]
-5 [Art des Befehls]
-6 ...
+2 [Betriebssytem -> win/ios]
+3 [Codierung des Cracks]
+4 [Art des Befehls]
+5 [Inhalt für den Befehl]
+6 [Art des Befehls]
+7 ...
 
 Definition der Befehle:
 Name    Inhalt          Beschreibung
