@@ -2,10 +2,10 @@ import sys
 
 indent =   "    "   #derzeitige einrückung
 name = "Keyboard."  #name der Keyboard Bibliothek
-n = "\n"            #weil ich keine lust habe \ zu drücken
+n = ";\n"            #weil ich keine lust habe \ zu drücken
 def duden(wort):    #https://docs.arduino.cc/language-reference/de/en/functions/usb/Keyboard/keyboardModifiers/
     if len(wort)==1:
-        return wort
+        return "\"" + wort + "\""
     match wort:
         case "shift":
             return "KEY_LEFT_SHIFT"
@@ -76,8 +76,6 @@ file_c = open(file_c_dir,"w")
 file_c.write("// Crackname: "+ txt[0] + "\n")
 file_c.write("void " + txt[2] + "_" + txt[1] + "() { \n")
 
-betriebssystem = txt[2]    # Betriebssystem zur Nutzung im Duden gespeichert
-
 for index in range(3,len(txt),2):
     print(txt[index])
     match txt[index]:
@@ -86,13 +84,14 @@ for index in range(3,len(txt),2):
         case "textl":
             file_c.write(indent+name+"println(\""+txt[index+1]+"\")"+n)
         case "comb":
-            print("todo")
+            for index2 in range (0,txt[index+1].count(" ")+1,1):
+                print("todo")
         case "stroke":
-            file_c.write(indent+name+"write(\""+duden(txt[index+1])+"\")"+n)
+            file_c.write(indent+name+"write("+duden(txt[index+1])+")"+n)
         case "hold":
-            file_c.write(indent+name+"press(\""+duden(txt[index+1])+"\")"+n)
+            file_c.write(indent+name+"press("+duden(txt[index+1])+")"+n)
         case "rel":
-            file_c.write(indent+name+"release(\""+duden(txt[index+1])+"\")"+n)
+            file_c.write(indent+name+"release("+duden(txt[index+1])+")"+n)
         case "relall":
             file_c.write(indent+name+"releaseAll()"+n)
         case "wait":
@@ -105,7 +104,7 @@ for index in range(3,len(txt),2):
                 print("Fehler in "+ file_t_dir + " zeile " + index + ". Nur eine Endlosschleife erlaubt!")
                 sys.exit()
         case _:
-            print("Befehl nicht erkannt: " + txt[index] + " zeile " + index)
+            print("Befehl nicht erkannt: " + txt[index] + " zeile " + str(index))
             sys.exit()
 
 if indent == "        ":

@@ -1,0 +1,5 @@
+// Crackname: Erklärung
+void win_0() { 
+    Keyboard.write(KEY_LEFT_GUI);
+    Keyboard.println("editor");
+}

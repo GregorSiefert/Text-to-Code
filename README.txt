@@ -15,8 +15,8 @@ Name    Inhalt          Beschreibung
 text    String          Tippt den Inhalt ab
 textl   String          Tippt den Inhalt ab und drückt danach [ENTER]
 comb    char abfolge    Hält die vorherigen Tasten und lässt nach dem drücken der letzen Taste alle vorher gedrückten Tasten los ---noch testen---
-press   char            Drückt eine Taste
-hold    char            Hält eine Taste !!!Achtung ohne Zeitliche Begrenzung!!!
+stroke   char            Drückt eine Taste
+press    char            Hält eine Taste !!!Achtung ohne Zeitliche Begrenzung!!!
 rel     char            Läst die Taste los
 relall  [none]          Läst alle Tasten los
 wait    int             wartet die angegebene Anzahl an Millisekunden
