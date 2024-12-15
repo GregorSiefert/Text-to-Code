@@ -1,0 +1,9 @@
+// Crackname: ALt+F4
+void win_1() { 
+    Keyboard.press(KEY_LEFT_ALT);
+    delay(50);
+    Keyboard.press(KEY_F4);
+    delay(50);
+    Keyboard.releaseAll();
+    delay(50);
+}
