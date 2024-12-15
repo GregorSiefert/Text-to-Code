@@ -84,8 +84,10 @@ for index in range(3,len(txt),2):
         case "textl":
             file_c.write(indent+name+"println(\""+txt[index+1]+"\")"+n)
         case "comb":
-            for index2 in range (0,txt[index+1].count(" ")+1,1):
-                print("todo")
+            comb_list = txt[index+1].split
+            for index2 in range (0,len(comb_list),1):
+                file_c.write(indent+name+"press("+duden(comb_list[index2])+")"+n)
+            file_c.write(indent+name+"releaseAll()"+n)
         case "stroke":
             file_c.write(indent+name+"write("+duden(txt[index+1])+")"+n)
         case "hold":

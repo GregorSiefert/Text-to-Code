@@ -13,7 +13,7 @@ Aufbau einer Text Datei:
 Definition der Befehle:
 Name    Inhalt          Beschreibung
 text    String          Tippt den Inhalt ab
-textl   String          Tippt den Inhalt ab und drückt danach [ENTER]
+textl   String          Tippt den Inhalt ab und geht danach in die nächste Zeile
 comb    char abfolge    Hält die vorherigen Tasten und lässt nach dem drücken der letzen Taste alle vorher gedrückten Tasten los ---noch testen---
 stroke   char            Drückt eine Taste
 press    char            Hält eine Taste !!!Achtung ohne Zeitliche Begrenzung!!!

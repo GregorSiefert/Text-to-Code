@@ -3,5 +3,7 @@ Erklärung
 win
 stroke
 win
-textl
+text
 editor
+stroke
+enter
