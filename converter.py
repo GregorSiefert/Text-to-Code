@@ -6,7 +6,7 @@ needed_delay = 50   #delay needed to not skip inputs
 n = ";\n"           #weil ich keine lust habe \ zu drücken
 def duden(wort):    #https://docs.arduino.cc/language-reference/de/en/functions/usb/Keyboard/keyboardModifiers/
     if len(wort)==1:
-        return "\"" + wort + "\""
+        return "\'" + wort + "\'"
     match wort:
         case "shift":
             return "KEY_LEFT_SHIFT"
@@ -124,6 +124,7 @@ for i in range(len(txt)):
 file_c = open(file_c_dir,"w")
 file_c.write("// Crackname: "+ txt[0] + "\n")
 file_c.write("void " + txt[2] + "_" + txt[1] + "() { \n")
+file_c.write(indent+"delay(500)"+n)
 
 for index in range(3,len(txt),2):
     print(txt[index]+": "+txt[index+1])
@@ -136,7 +137,7 @@ for index in range(3,len(txt),2):
             comb_list = txt[index+1].split()
             for index2 in range (0,len(comb_list),1):
                 file_c.write(indent+name+"press("+duden(comb_list[index2])+")"+n)
-                file_c.write(indent+"delay("+str(needed_delay)+")"+n)
+                file_c.write(indent+"delay(needed_delay)"+n)
             file_c.write(indent+name+"releaseAll()"+n)
         case "stroke":
             file_c.write(indent+name+"write("+duden(txt[index+1])+")"+n)
@@ -150,7 +151,7 @@ for index in range(3,len(txt),2):
             file_c.write(indent+"delay("+txt[index+1]+")"+n)
         case "rep":
             if indent == "    " :
-                file_c.write(indent+"while(1) {"+n)
+                file_c.write(indent+"while(1) {\n")
                 indent = indent + "    "
             else:
                 print("Fehler in "+ file_t_dir + " zeile " + index + ". Nur eine Endlosschleife erlaubt!")
@@ -158,10 +159,10 @@ for index in range(3,len(txt),2):
         case _:
             print("Befehl nicht erkannt: " + txt[index] + " zeile " + str(index))
             sys.exit()
-    file_c.write(indent+"delay("+str(needed_delay)+")"+n)
+    file_c.write(indent+"delay(needed_delay)"+n)
 
 if indent == "        ":
-    file_c.write("    }" + n)
+    file_c.write("    }\n")
 file_c.write("}")
 file_c.close()
 

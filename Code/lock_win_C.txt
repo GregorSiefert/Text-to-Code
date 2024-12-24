@@ -1,0 +1,14 @@
+// Crackname: lock
+void win_3() { 
+    delay(500);
+    Keyboard.press(KEY_LEFT_CTRL);
+    delay(needed_delay);
+    Keyboard.press(KEY_LEFT_ALT);
+    delay(needed_delay);
+    Keyboard.press(KEY_DELETE);
+    delay(needed_delay);
+    Keyboard.releaseAll();
+    delay(needed_delay);
+    Keyboard.write(KEY_RETURN);
+    delay(needed_delay);
+}

@@ -1,0 +1,7 @@
+lock
+3
+win
+comb
+ctrl alt del
+stroke
+enter

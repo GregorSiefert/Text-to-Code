@@ -1,6 +1,18 @@
 // Crackname: Erklärung
 void win_0() { 
+    delay(500);
     Keyboard.write(KEY_LEFT_GUI);
+    delay(needed_delay);
     Keyboard.print("editor");
+    delay(needed_delay);
     Keyboard.write(KEY_RETURN);
+    delay(needed_delay);
+    Keyboard.press(KEY_LEFT_CTRL);
+    delay(needed_delay);
+    Keyboard.press("a");
+    delay(needed_delay);
+    Keyboard.releaseAll();
+    delay(needed_delay);
+    Keyboard.write(KEY_BACKSPACE);
+    delay(needed_delay);
 }

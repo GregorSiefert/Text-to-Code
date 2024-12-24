@@ -7,3 +7,7 @@ text
 editor
 stroke
 enter
+comb
+ctrl a
+stroke
+back
